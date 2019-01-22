@@ -160,7 +160,7 @@ class Instagraph
     {
         $fill = "convert {$this->_tmp2} -floodfill +0+0 {$color} {$this->_tmp2}";
         $alpha = "convert {$this->_tmp2} -alpha set -background transparent -channel A -fx \"{$amount}\" {$this->_tmp2}";
-        $composite = "convert {$this->_tmp2} {$this->_tmp} -compose {$type} -composite {$this->_tmp}";
+        $composite = "convert {$this->_tmp} {$this->_tmp2}  -composite -compose {$type} {$this->_tmp}";
         $this->execute($fill);
         $this->execute($alpha);
         $this->execute($composite);
